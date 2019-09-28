@@ -3,12 +3,26 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './modules/home/home/home.component';
+import { HomeComponent } from './modules/home/home.component';
+import { PacientesComponent } from './modules/pacientes/pacientes.component';
+import { ConsultasComponent } from './modules/consultas/consultas.component';
+import { ApmComponent } from './modules/apm/apm.component';
+import { ReporteComponent } from './modules/reporte/reporte.component';
+import { GestionDeTurnosComponent } from './modules/gestion-de-turnos/gestion-de-turnos.component';
+import { PagosComponent } from './modules/pagos/pagos.component';
+import { ObraSocialComponent } from './modules/obra-social/obra-social.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    PacientesComponent,
+    ConsultasComponent,
+    ApmComponent,
+    ReporteComponent,
+    GestionDeTurnosComponent,
+    PagosComponent,
+    ObraSocialComponent
   ],
   imports: [
     BrowserModule,
