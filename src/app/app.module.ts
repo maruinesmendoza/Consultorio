@@ -11,6 +11,7 @@ import { ReporteComponent } from './modules/reporte/reporte.component';
 import { GestionDeTurnosComponent } from './modules/gestion-de-turnos/gestion-de-turnos.component';
 import { PagosComponent } from './modules/pagos/pagos.component';
 import { ObraSocialComponent } from './modules/obra-social/obra-social.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ObraSocialComponent } from './modules/obra-social/obra-social.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
