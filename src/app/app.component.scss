@@ -26,9 +26,11 @@
 
   .toolbar {
     height: 60px;
-    margin: -8px;
+    margin: -2px;
+    padding-left: 500px;
+    padding-top: 10px;
     display: flex;
-    align-items: center;
+    align-items: left;
     background-color: #1976d2;
     color: white;
     font-weight: 600;
@@ -38,14 +40,7 @@
     margin: 0 16px;
   }
 
-  .toolbar #twitter-logo {
-    height: 40px;
-    margin: 0 16px;
-  }
 
-  .toolbar #twitter-logo:hover {
-    opacity: 0.8;
-  }
 
   .content {
     display: flex;
