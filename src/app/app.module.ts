@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule , CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,7 +16,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
-
+import {MatDatepickerModule,} from '@angular/material/datepicker';
+import {MatButtonModule} from '@angular/material/button';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatNativeDateModule } from '@angular/material/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,10 +38,14 @@ import {MatInputModule} from '@angular/material/input';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
-    MatInputModule
-    
+    MatInputModule,
+    MatDatepickerModule,
+    MatButtonModule,
+    MatRadioModule,
+    MatNativeDateModule 
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [MatDatepickerModule],
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }
