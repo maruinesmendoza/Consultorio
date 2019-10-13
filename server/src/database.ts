@@ -3,9 +3,9 @@ import keys from './keys';
 
 const pool = mysql.createPool(keys.database);
 
-pool.getConnection()
+pool.get('getConnection')
     .then(connection => {
-        pool.releaseConnection(connection);
+        pool.return(connection);
         console.log('DB is Connected');
     });
 
