@@ -3,7 +3,7 @@ import { Router } from 'express';
 class IndexRoutes
 {
 
-    public router: Router = Router();
+    router: Router = Router();
 
     constructor()
     {

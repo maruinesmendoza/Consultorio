@@ -3,7 +3,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 
 import indexRoutes  from './routes/indexRoutes';
-
+import pacienteRoutes  from './routes/pacienteRoutes';
 class Server {
     public app: Application;
     constructor() {
@@ -24,6 +24,7 @@ class Server {
     routes(): void 
     {
         this.app.use(indexRoutes);
+        this.app.use('/api/paciente', pacienteRoutes);
      }
 
     start(): void {
