@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PersonaModel } from 'src/app/models/pacienteModel';
+import { Service } from 'src/app/services/service';
 
 @Component({
   selector: 'app-pacientes',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PacientesComponent implements OnInit {
 
-  constructor() { }
+  apiName : string = 'persona';
+  list : PersonaModel[];
 
+  constructor(private service: Service) { }
   ngOnInit() {
+     this.service.list<PersonaModel>(this.apiName).subscribe(
+      res => {
+        console.log(res);
+        this.list = res;
+      },
+      err => console.log(err)
+    )
   }
 
 }

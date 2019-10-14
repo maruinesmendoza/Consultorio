@@ -1,4 +1,4 @@
-export interface PacienteModel {
+export interface PersonaModel {
     IdPersona?: number,
     Nombre?: string,
     Apellido?: string,
