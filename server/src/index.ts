@@ -6,6 +6,12 @@ import indexRoutes  from './routes/indexRoutes';
 import { Routes } from './routes/routes';
 import { PacienteController } from './controller/pacienteController';
 import { PersonaController } from './controller/personaController';
+import { GestionTurnosController } from './controller/gestionTurnosController';
+import { LaboratorioController } from './controller/laboratorioController';
+import { ConsultaController } from './controller/consultaController';
+import { PagosController } from './controller/pagosController';
+import { ApmController } from './controller/ampController';
+import { OrbaSocialController } from './controller/ObraSocialController';
 
 class Server {
     public app: Application;
@@ -28,8 +34,14 @@ class Server {
     {
         this.app.use(indexRoutes);
         const route = new Routes();
-        this.app.use('/api/persona', route.route(new PersonaController()));    
+        this.app.use('/api/apm', route.route(new ApmController()));
+        this.app.use('/api/consulta', route.route(new ConsultaController()));
+        this.app.use('/api/gestionTurnos', route.route(new GestionTurnosController()));
+        this.app.use('/api/laboratorio', route.route(new LaboratorioController()));
+        this.app.use('/api/obraSocial', route.route(new OrbaSocialController()));
         this.app.use('/api/paciente', route.route(new PacienteController()));
+        this.app.use('/api/pagos', route.route(new PagosController()));
+        this.app.use('/api/persona', route.route(new PersonaController()));
      }
 
     start(): void {

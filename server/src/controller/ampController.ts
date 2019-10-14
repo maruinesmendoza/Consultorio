@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
 import pool from '../database';
 
-var getName: string = "persona";
-export class PersonaController {
+var getName: string = "apm";
+export class ApmController {
 
     public async list(req: Request, res: Response): Promise<void> {
         const result = await pool.query('SELECT * FROM ' + getName );

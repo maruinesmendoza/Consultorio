@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import pool from '../database';
 
-var getName: string = "Paciente";
+var getName: string = "paciente";
 export class PacienteController {
 
     public async list(req: Request, res: Response): Promise<void> {
