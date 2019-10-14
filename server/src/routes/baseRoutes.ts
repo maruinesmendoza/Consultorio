@@ -1,23 +1,20 @@
 import express, { Router } from 'express';
+import { PacienteController } from '../controller/pacienteController';
+import { PersonaController } from '../controller/personaController';
 
-import { BaseController } from '../controller/baseController';
 
-var controller : BaseController;
 export class BaseRoutes {
-  
-    router: Router = Router();
+    route(entityName: string)
+    {
+        const controller = new PacienteController();
+        const router: Router =Router( );
 
-    constructor(currentController : BaseController) {
-        controller = currentController;
-        this.config();
+        router.get('/', controller.list);
+        router.get('/:id', controller.get);
+        router.post('/', controller.post);
+        router.put('/:id', controller.put);
+        router.delete('/:id', controller.delete);
+
+        return router;
     }
-
-    config() {
-        this.router.get('/', controller.list);
-        this.router.get('/:id', controller.get);
-        this.router.post('/', controller.post);
-        this.router.put('/:id', controller.put);
-        this.router.delete('/:id', controller.delete);
-    }
-
 }

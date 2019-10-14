@@ -3,8 +3,8 @@ import morgan from 'morgan';
 import cors from 'cors';
 
 import indexRoutes  from './routes/indexRoutes';
-import pacienteRoutes  from './routes/pacienteRoutes';
-import personaRoutes  from './routes/personaRoutes';
+import { BaseRoutes } from './routes/baseRoutes';
+
 class Server {
     public app: Application;
     constructor() {
@@ -25,8 +25,10 @@ class Server {
     routes(): void 
     {
         this.app.use(indexRoutes);
-        this.app.use('/api/persona', personaRoutes);
-        this.app.use('/api/paciente', pacienteRoutes);
+        const route = new BaseRoutes();
+
+        this.app.use('/api/persona', route.route("persona"));    
+        this.app.use('/api/paciente', route.route("paciente"));
 
      }
 
