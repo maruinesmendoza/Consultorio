@@ -1,24 +1,10 @@
-import express, { Router } from 'express';
-
 import controller from '../controller/pacienteController';
+import { BaseRoutes } from './baseRoutes';
 
-class PacienteRoutes {
-
-    router: Router = Router();
-
+class  PacienteRoutes extends BaseRoutes {
     constructor() {
-        this.config();
+        super(controller);
     }
-
-    config() {
-        this.router.get('/', controller.list);
-        this.router.get('/:id', controller.get);
-        this.router.post('/', controller.post);
-        this.router.put('/:id', controller.put);
-        this.router.delete('/:id', controller.delete);
-    }
-
 }
 
 export default new PacienteRoutes().router;
-

@@ -4,6 +4,7 @@ import cors from 'cors';
 
 import indexRoutes  from './routes/indexRoutes';
 import pacienteRoutes  from './routes/pacienteRoutes';
+import personaRoutes  from './routes/personaRoutes';
 class Server {
     public app: Application;
     constructor() {
@@ -24,7 +25,9 @@ class Server {
     routes(): void 
     {
         this.app.use(indexRoutes);
+        this.app.use('/api/persona', personaRoutes);
         this.app.use('/api/paciente', pacienteRoutes);
+
      }
 
     start(): void {
