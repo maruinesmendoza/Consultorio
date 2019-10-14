@@ -3,12 +3,10 @@ import { PacienteController } from '../controller/pacienteController';
 import { PersonaController } from '../controller/personaController';
 
 
-export class BaseRoutes {
-    route(entityName: string)
+export class Routes {
+    route(controller: any)
     {
-        const controller = new PacienteController();
-        const router: Router =Router( );
-
+        const router: Router =Router();
         router.get('/', controller.list);
         router.get('/:id', controller.get);
         router.post('/', controller.post);
