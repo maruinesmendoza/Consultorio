@@ -1,4 +1,4 @@
-export interface PacienteModel {
+export interface ObraSocialModel {
     IdObraSocial?: number,
     Descripcion?: string
 };

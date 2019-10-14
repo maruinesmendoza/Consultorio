@@ -11,8 +11,8 @@ export class Service {
 
   constructor(private http: HttpClient) { }
 
-  list(apiName: string) {
-    return this.http.get(`${this.API_URI}/${apiName}`);
+  list<T>(apiName: string) {
+    return this.http.get<T[]>(`${this.API_URI}/${apiName}`);
   }
 
   get(id: string,apiName: string) {
