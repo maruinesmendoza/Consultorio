@@ -1,9 +1,8 @@
 import { BaseController } from './baseController';
 class PacienteController extends BaseController {
- constructor()
- {     
-     super("Paciente");     
- }
+    constructor() {
+        super("Paciente");
+    }
 }
 
 const pacienteController = new PacienteController();
