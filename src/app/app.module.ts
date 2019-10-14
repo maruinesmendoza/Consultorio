@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule , CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './modules/home/home.component';
@@ -22,7 +23,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatNativeDateModule } from '@angular/material/core';
 import {MatListModule} from '@angular/material/list';
-
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +41,8 @@ import {MatListModule} from '@angular/material/list';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatToolbarModule,
     MatIconModule,
     MatInputModule,
@@ -47,7 +50,8 @@ import {MatListModule} from '@angular/material/list';
     MatButtonModule,
     MatRadioModule,
     MatNativeDateModule,
-    MatListModule
+    MatListModule,
+    MatAutocompleteModule
   ],
   providers: [MatDatepickerModule],
   bootstrap: [AppComponent],
