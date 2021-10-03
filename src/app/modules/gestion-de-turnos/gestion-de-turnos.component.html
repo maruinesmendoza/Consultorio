@@ -8,11 +8,14 @@
         <small>Nombre: {{item.Apellido}}</small>
       </mat-option>
     </mat-autocomplete>
+
   </mat-form-field>
 
-    <mat-form-field>
-      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
 </form>
+
+<label>
+  Dia y Hora:
+  <input [min]="min" [max]="max"
+         [owlDateTimeTrigger]="dt10" [owlDateTime]="dt10">
+  <owl-date-time #dt10></owl-date-time>
+</label>
