@@ -9,7 +9,6 @@ import { HomeComponent } from './modules/home/home.component';
 import { PacientesComponent } from './modules/pacientes/pacientes.component';
 import { ConsultasComponent } from './modules/consultas/consultas.component';
 import { ApmComponent } from './modules/apm/apm.component';
-import { ReporteComponent } from './modules/reporte/reporte.component';
 import { GestionDeTurnosComponent } from './modules/gestion-de-turnos/gestion-de-turnos.component';
 import { PagosComponent } from './modules/pagos/pagos.component';
 import { ObraSocialComponent } from './modules/obra-social/obra-social.component';
@@ -24,6 +23,10 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatNativeDateModule } from '@angular/material/core';
 import {MatListModule} from '@angular/material/list';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+ 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +34,6 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     PacientesComponent,
     ConsultasComponent,
     ApmComponent,
-    ReporteComponent,
     GestionDeTurnosComponent,
     PagosComponent,
     ObraSocialComponent
@@ -51,9 +53,12 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     MatRadioModule,
     MatNativeDateModule,
     MatListModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatCheckboxModule,
+    OwlDateTimeModule, OwlNativeDateTimeModule
+
   ],
-  providers: [MatDatepickerModule],
+  providers: [MatDatepickerModule,MatCheckboxModule],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
