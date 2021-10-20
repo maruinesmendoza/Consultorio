@@ -25,6 +25,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import {MatSelectModule} from '@angular/material/select'
+import {MatSnackBarModule} from '@angular/material/snack-bar';
  
 
 @NgModule({
@@ -55,7 +57,11 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
     MatListModule,
     MatAutocompleteModule,
     MatCheckboxModule,
-    OwlDateTimeModule, OwlNativeDateTimeModule
+    OwlDateTimeModule, OwlNativeDateTimeModule,
+    MatSelectModule, 
+    MatSnackBarModule,  
+
+    
 
   ],
   providers: [MatDatepickerModule,MatCheckboxModule],
