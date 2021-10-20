@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Service } from '../../services/service'
 import { ObraSocialModel } from 'src/app/models/obraSocialModel';
+
 @Component({
   selector: 'app-obra-social',
   templateUrl: './obra-social.component.html',
@@ -22,3 +23,4 @@ export class ObraSocialComponent implements OnInit {
     )
   }
 }
+
