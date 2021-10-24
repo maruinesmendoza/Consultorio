@@ -27,6 +27,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import {MatSelectModule} from '@angular/material/select'
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { LoginComponent } from './modules/login/login.component';
+import { MainComponent } from './modules/main/main.component';
  
 
 @NgModule({
@@ -38,7 +40,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     ApmComponent,
     GestionDeTurnosComponent,
     PagosComponent,
-    ObraSocialComponent
+    ObraSocialComponent,
+    LoginComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
