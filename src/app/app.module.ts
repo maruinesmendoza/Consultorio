@@ -29,7 +29,11 @@ import {MatSelectModule} from '@angular/material/select'
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { LoginComponent } from './modules/login/login.component';
 import { MainComponent } from './modules/main/main.component';
- 
+import { CommonModule } from '@angular/common';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
+
+
 
 @NgModule({
   declarations: [
@@ -64,6 +68,12 @@ import { MainComponent } from './modules/main/main.component';
     OwlDateTimeModule, OwlNativeDateTimeModule,
     MatSelectModule, 
     MatSnackBarModule,  
+    CommonModule,
+    MatFormFieldModule,
+  
+
+
+    
 
     
 
