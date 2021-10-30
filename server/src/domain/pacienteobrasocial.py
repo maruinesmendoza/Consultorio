@@ -3,7 +3,7 @@ from config import db
 class PacienteObraSocial(db.Model):
 
     # table name
-    __tablename__ = 'paciente'
+    __tablename__ = 'pacienteobrasocial'
     IdPaciente = db.Column(db.Integer(), primary_key=True, autoincrement=True)
     IdObraSocial = db.Column(db.Integer(), nullable=False)
 

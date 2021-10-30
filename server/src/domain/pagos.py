@@ -7,7 +7,7 @@ class Pagos(db.Model):
     IdPagos  = db.Column(db.Integer(), primary_key=True, autoincrement=True)
     IdConsulta = db.Column(db.Integer(), nullable=False)
     IdPaciente = db.Column(db.Integer(), nullable=False)
-    Monto = db.Column(db.Decimal(), nullable=False)
+    Monto = db.Column(db.Float(), nullable=False)
     Observaciones = db.Column(db.String(), nullable=False)
 
     def as_dict(self):
