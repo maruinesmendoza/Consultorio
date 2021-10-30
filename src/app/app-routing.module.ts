@@ -7,8 +7,12 @@ import { GestionDeTurnosComponent }  from '../app/modules/gestion-de-turnos/gest
 import { PagosComponent }  from '../app/modules/pagos/pagos.component'
 import { ObraSocialComponent }  from '../app/modules/obra-social/obra-social.component'
 import { HomeComponent} from '../app/modules/home/home.component'
+import { LoginComponent } from './modules/login/login.component';
+import { MainComponent } from './modules/main/main.component';
 
 const routes: Routes = [
+  {path:'login',component:LoginComponent},
+  {path:'main',component:MainComponent},
 
   { path: 'Pacientes', component: PacientesComponent },
   { path: 'Consultas', component: ConsultasComponent },

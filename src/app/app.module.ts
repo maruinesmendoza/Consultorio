@@ -25,7 +25,15 @@ import {MatListModule} from '@angular/material/list';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
- 
+import {MatSelectModule} from '@angular/material/select'
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { LoginComponent } from './modules/login/login.component';
+import { MainComponent } from './modules/main/main.component';
+import { CommonModule } from '@angular/common';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
+
+
 
 @NgModule({
   declarations: [
@@ -36,7 +44,9 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
     ApmComponent,
     GestionDeTurnosComponent,
     PagosComponent,
-    ObraSocialComponent
+    ObraSocialComponent,
+    LoginComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +65,17 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
     MatListModule,
     MatAutocompleteModule,
     MatCheckboxModule,
-    OwlDateTimeModule, OwlNativeDateTimeModule
+    OwlDateTimeModule, OwlNativeDateTimeModule,
+    MatSelectModule, 
+    MatSnackBarModule,  
+    CommonModule,
+    MatFormFieldModule,
+  
+
+
+    
+
+    
 
   ],
   providers: [MatDatepickerModule,MatCheckboxModule],
