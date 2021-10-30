@@ -1,0 +1,84 @@
+<form class="example-form">
+  <h1 mat-subheader> Pacientes</h1>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Nombre" value="">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Apellido" value="">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="DNI"></textarea>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Direccion"></textarea>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Fecha de Nacimiento "></textarea>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Telefono"></textarea>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Celular"></textarea>
+  </mat-form-field>
+  
+  <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Mail"></textarea>
+  </mat-form-field>
+
+
+
+
+
+  
+    
+
+
+
+  <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Historial"></textarea>
+    <a mat-button [routerLink]="'/Consultas'"> <section>
+    
+    </section>Consultas </a>
+     </mat-form-field><br>
+
+     <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="Historial"></textarea>
+      <a mat-button [routerLink]="'/ObraSocial'"> <section>
+      
+      </section>ObraSocial </a>
+       </mat-form-field><br>
+
+       <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Historial"></textarea>
+        <a mat-button [routerLink]="'/Pagos'"> <section>
+        
+        </section>pagos </a>
+         </mat-form-field>
+     
+
+  
+
+</form>
+
+
+<button mat-button>Aceptar</button>
+<button mat-button>Cancelar</button>
+
+
+
+
+
+
+
+
+
+
+<h3 mat-subheader></h3>
+<mat-list>
+  <mat-list-item *ngFor="let item of list">
+    <mat-icon mat-list-icon>folder</mat-icon>
+    <h4 mat-line>{{item.Nombre}} - {{item.Apellido}} </h4>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+</mat-list>

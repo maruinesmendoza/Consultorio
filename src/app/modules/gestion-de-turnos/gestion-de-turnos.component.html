@@ -1,0 +1,21 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Persona" aria-label="Persona" [matAutocomplete]="auto" [formControl]="personasCtrl">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let item of listPersonas | async" [value]="item.Apellido">
+        <img class="example-option-img" aria-hidden [src]="item.IdPersona" height="25">
+        <span>{{item.Apellido}}</span> |
+        <small>Nombre: {{item.Apellido}}</small>
+      </mat-option>
+    </mat-autocomplete>
+
+  </mat-form-field>
+
+</form>
+
+<label>
+  Dia y Hora:
+  <input [min]="min" [max]="max"
+         [owlDateTimeTrigger]="dt10" [owlDateTime]="dt10">
+  <owl-date-time #dt10></owl-date-time>
+</label>
