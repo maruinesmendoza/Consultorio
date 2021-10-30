@@ -7,7 +7,7 @@ class Consulta(db.Model):
     IdConsulta  = db.Column(db.Integer(), primary_key=True, autoincrement=True)
     IdObraSocial = db.Column(db.Integer(), nullable=False)
     IdGestionturno = db.Column(db.Integer(), nullable=False)
-    #Fecha = db.Column(db.DateTime(), nullable=False)
+    Fecha = db.Column(db.DateTime(), nullable=False)
     IdPaciente = db.Column(db.Integer(), nullable=False)
 
     def as_dict(self):

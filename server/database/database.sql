@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 14-10-2019 a las 18:28:12
--- Versión del servidor: 10.4.8-MariaDB
--- Versión de PHP: 7.3.10
+-- Host: 127.0.0.1
+-- Generation Time: Oct 30, 2021 at 03:15 PM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `consultoriomedico`
+-- Database: `consultoriomedico`
 --
 CREATE DATABASE IF NOT EXISTS `consultoriomedico` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `consultoriomedico`;
@@ -27,7 +26,7 @@ USE `consultoriomedico`;
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `apm`
+-- Table structure for table `apm`
 --
 
 CREATE TABLE `apm` (
@@ -39,7 +38,7 @@ CREATE TABLE `apm` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `consulta`
+-- Table structure for table `consulta`
 --
 
 CREATE TABLE `consulta` (
@@ -53,7 +52,7 @@ CREATE TABLE `consulta` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gestionturnos`
+-- Table structure for table `gestionturnos`
 --
 
 CREATE TABLE `gestionturnos` (
@@ -66,7 +65,7 @@ CREATE TABLE `gestionturnos` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `laboratorio`
+-- Table structure for table `laboratorio`
 --
 
 CREATE TABLE `laboratorio` (
@@ -77,7 +76,7 @@ CREATE TABLE `laboratorio` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `obrasocial`
+-- Table structure for table `obrasocial`
 --
 
 CREATE TABLE `obrasocial` (
@@ -85,10 +84,17 @@ CREATE TABLE `obrasocial` (
   `Descripcion` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `obrasocial`
+--
+
+INSERT INTO `obrasocial` (`IdObraSocial`, `Descripcion`) VALUES
+(1, 'Ospac');
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `paciente`
+-- Table structure for table `paciente`
 --
 
 CREATE TABLE `paciente` (
@@ -97,7 +103,7 @@ CREATE TABLE `paciente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `paciente`
+-- Dumping data for table `paciente`
 --
 
 INSERT INTO `paciente` (`IdPaciente`, `IdPersona`) VALUES
@@ -106,7 +112,7 @@ INSERT INTO `paciente` (`IdPaciente`, `IdPersona`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `pacienteobrasocial`
+-- Table structure for table `pacienteobrasocial`
 --
 
 CREATE TABLE `pacienteobrasocial` (
@@ -117,7 +123,7 @@ CREATE TABLE `pacienteobrasocial` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `pagos`
+-- Table structure for table `pagos`
 --
 
 CREATE TABLE `pagos` (
@@ -131,7 +137,7 @@ CREATE TABLE `pagos` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `persona`
+-- Table structure for table `persona`
 --
 
 CREATE TABLE `persona` (
@@ -147,66 +153,86 @@ CREATE TABLE `persona` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `persona`
+-- Dumping data for table `persona`
 --
 
 INSERT INTO `persona` (`IdPersona`, `Nombre`, `Apellido`, `Tel`, `FechaNacimiento`, `DNI`, `Direccion`, `Email`, `Celular`) VALUES
 (1, 'Maria', 'Mendoza', '4550376', '0000-00-00 00:00:00', '2845978', 'Vallentin Gomez', '3260', '1');
 
+-- --------------------------------------------------------
+
 --
--- Índices para tablas volcadas
+-- Table structure for table `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `IdUsuario` int(11) NOT NULL,
+  `UserName` varchar(50) NOT NULL,
+  `Password` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `apm`
+-- Indexes for table `apm`
 --
 ALTER TABLE `apm`
   ADD PRIMARY KEY (`IdApm`);
 
 --
--- Indices de la tabla `consulta`
+-- Indexes for table `consulta`
 --
 ALTER TABLE `consulta`
   ADD PRIMARY KEY (`IdConsulta`);
 
 --
--- Indices de la tabla `gestionturnos`
+-- Indexes for table `gestionturnos`
 --
 ALTER TABLE `gestionturnos`
   ADD PRIMARY KEY (`IdGestionTurno`);
 
 --
--- Indices de la tabla `laboratorio`
+-- Indexes for table `laboratorio`
 --
 ALTER TABLE `laboratorio`
   ADD PRIMARY KEY (`IdLaboratorio`);
 
 --
--- Indices de la tabla `obrasocial`
+-- Indexes for table `obrasocial`
 --
 ALTER TABLE `obrasocial`
   ADD PRIMARY KEY (`IdObraSocial`);
 
 --
--- Indices de la tabla `paciente`
+-- Indexes for table `paciente`
 --
 ALTER TABLE `paciente`
   ADD PRIMARY KEY (`IdPaciente`);
 
 --
--- Indices de la tabla `pacienteobrasocial`
+-- Indexes for table `pacienteobrasocial`
 --
 ALTER TABLE `pacienteobrasocial`
   ADD PRIMARY KEY (`IdPaciente`);
 
 --
--- Indices de la tabla `pagos`
+-- Indexes for table `pagos`
 --
 ALTER TABLE `pagos`
   ADD PRIMARY KEY (`IdPagos`);
 
 --
--- Indices de la tabla `persona`
+-- Indexes for table `persona`
 --
 ALTER TABLE `persona`
   ADD PRIMARY KEY (`IdPersona`);
+
+--
+-- Indexes for table `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`IdUsuario`);
+--
+
