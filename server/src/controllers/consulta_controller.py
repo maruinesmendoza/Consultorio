@@ -9,7 +9,7 @@ from flask_cors import CORS
 apiconsulta = Blueprint('consulta', 'consulta')
 routeapi = '/api/consulta'
 service = servicebase(Consulta)
-CORS(Consulta)
+CORS(apiconsulta)
 controllerapi = controllerbase(Consulta, service)
 @apiconsulta.route(routeapi, methods=['GET'])
 def api_get():
