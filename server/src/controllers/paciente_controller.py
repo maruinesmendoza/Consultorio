@@ -4,45 +4,33 @@ import services.paciente_service as paciente_service
 from domain.paciente import Paciente
 from werkzeug.exceptions import HTTPException
 import json
+from flask_cors import CORS
+
 
 api = Blueprint('pacientes', 'pacientes')
+service = servicebase(Paciente)
+controllerapi = controllerbase(Paciente, service)
+CORS(Paciente)
 
-
-@api.route('/pacientes', methods=['GET'])
+@Paciente.route(routeapi, methods=['GET'])
 def api_get():
-    ''' Get all entities'''
-    entities = paciente_service.get()
-    return jsonify([entity.as_dict() for entity in entities])
+    return controllerapi.api_get()
 
-@api.route('/pacientes', methods=['POST'])
+@Paciente.route(routeapi, methods=['POST'])
 def api_post():
-    ''' Create entity'''
-    entity = paciente_service.post(request.json)
-    return jsonify(entity.as_dict())
+    return controllerapi.api_post()
 
-@api.route('/pacientes/<string:id>', methods=['PUT'])
+@Paciente.route(routeapi + '/<string:id>', methods=['PUT'])
 def api_put(id):
-    ''' Update entity by id'''
-    body = request.json
-    body['id'] = id
-    res = paciente_service.put(body)
-    return jsonify(res.as_dict()) if isinstance(res, Paciente) else jsonify(res)
+    return controllerapi.api_put(id)
 
-@api.route('/pacientes/<string:id>', methods=['DELETE'])
+@Paciente.route(routeapi + '/<string:id>', methods=['DELETE'])
 def api_delete(id):
-    ''' Delete entity by id'''
-    res = paciente_service.delete(id)
-    return jsonify(res)
+    return controllerapi.api_delete(id)
 
-@api.errorhandler(HTTPException)
+@Paciente.errorhandler(HTTPException)
 def handle_exception(e):
-    """Return JSON format for HTTP errors."""
-    # start with the correct headers and status code from the error
-    response = e.get_response()
-    # replace the body with JSON
-    response.data = json.dumps({
-        'success': False,
-        "message": e.description
-    })
-    response.content_type = "application/json"
-    return response
+    return controllerapi.handle_exception(e)
+
+
+

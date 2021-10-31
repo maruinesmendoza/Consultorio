@@ -3,10 +3,12 @@ from flask import Blueprint
 from werkzeug.exceptions import HTTPException
 from domain.persona import Persona
 from services.service_base import servicebase;
+from flask_cors import CORS
 
 apipersona = Blueprint('persona', 'persona')
 routeapi = '/api/persona'
 service = servicebase(Persona)
+CORS(Persona)
 controllerapi = controllerbase(Persona, service)
 @apipersona.route(routeapi, methods=['GET'])
 def api_get():

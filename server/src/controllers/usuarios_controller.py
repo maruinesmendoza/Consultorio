@@ -1,6 +1,5 @@
 import json
 from flask.globals import request
-from flask.json import jsonify
 from flask.wrappers import Response
 from controllers.controller_base import controllerbase
 from flask import Blueprint
@@ -11,6 +10,7 @@ from services.service_base import servicebase
 from services.usuarios_service import UsuarioService
 from http import HTTPStatus
 from flask_cors import CORS
+
 apiusuarios = Blueprint('usuarios', 'usuarios')
 routeapi = '/api/usuarios'
 service = servicebase(Usuarios)
