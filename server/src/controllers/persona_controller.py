@@ -5,7 +5,7 @@ from domain.persona import Persona
 from services.service_base import servicebase;
 
 apipersona = Blueprint('persona', 'persona')
-routeapi = '/persona'
+routeapi = '/api/persona'
 service = servicebase(Persona)
 controllerapi = controllerbase(Persona, service)
 @apipersona.route(routeapi, methods=['GET'])

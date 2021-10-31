@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule , CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
@@ -70,15 +70,12 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatSnackBarModule,  
     CommonModule,
     MatFormFieldModule,
-  
-
-
-    
-
-    
 
   ],
-  providers: [MatDatepickerModule,MatCheckboxModule],
+  providers: [MatDatepickerModule,MatCheckboxModule,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    // provider used to create fake backend
+    ],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

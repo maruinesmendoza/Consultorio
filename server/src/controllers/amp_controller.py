@@ -5,7 +5,7 @@ from domain.apm import Apm
 from services.service_base import servicebase;
 
 apiamp = Blueprint('amp', 'amp')
-routeapi = '/consulta'
+routeapi = '/api/consulta'
 service = servicebase(Apm)
 controllerapi = controllerbase(Apm, service)
 @apiamp.route(routeapi, methods=['GET'])

@@ -5,7 +5,7 @@ from domain.obrasocial import ObraSocial
 from services.service_base import servicebase;
 
 apiobrasocial = Blueprint('obrasocial', 'obrasocial')
-routeapi = '/obrasocial'
+routeapi = '/api/obrasocial'
 service = servicebase(ObraSocial)
 controllerapi = controllerbase(ObraSocial, service)
 @apiobrasocial.route(routeapi, methods=['GET'])

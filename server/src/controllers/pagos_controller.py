@@ -5,7 +5,7 @@ from domain.pagos import Pagos
 from services.service_base import servicebase;
 
 apipagos = Blueprint('pagos', 'pagos')
-routeapi = '/pagos'
+routeapi = '/api/pagos'
 service = servicebase(Pagos)
 controllerapi = controllerbase(Pagos, service)
 @apipagos.route(routeapi, methods=['GET'])
