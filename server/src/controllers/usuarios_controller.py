@@ -47,7 +47,7 @@ def login():
         response = Response(json.dumps(user.__dict__), status=HTTPStatus.OK, mimetype='application/json')
         return response
     else:
-        response = Response("Usuario no econtrado", status=HTTPStatus.NOT_FOUND, mimetype='application/json')
+        response = Response("Usuario o Password Incorrecto", status=HTTPStatus.NOT_FOUND, mimetype='application/json')
         return response
 
  
