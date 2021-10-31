@@ -1,7 +1,8 @@
-<div class="toolbar" role="banner">
-    <h1>
-      <p> <img src="../../../assets/img/logodemedico.png" alt="Girl in a jacket" width="25" height="25"> CON SALUD</h1>
-  </div>
+  
+      <div class="toolbar" role="banner">
+      <h1><p> <img src="../../../assets/img/logodemedico.png" alt="Girl in a jacket" width="25" height="25"> CON SALUD</h1>
+        <a mat-button (click)="logout()"> LogOut </a>
+      </div>
   <mat-toolbar color="primary" *ngIf="currentUser">
     <mat-toolbar-row>
       <button mat-icon-button>

@@ -5,7 +5,7 @@ from domain.pacienteobrasocial import PacienteObraSocial
 from services.service_base import servicebase;
 
 apipacienteObraSocial = Blueprint('pacienteObraSocial', 'pacienteObraSocial')
-routeapi = '/pacienteObraSocial'
+routeapi = '/api/pacienteObraSocial'
 service = servicebase(PacienteObraSocial)
 controllerapi = controllerbase(PacienteObraSocial, service)
 @apipacienteObraSocial.route(routeapi, methods=['GET'])

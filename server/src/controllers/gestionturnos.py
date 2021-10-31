@@ -5,7 +5,7 @@ from domain.gestionturnos import GestionTurnos
 from services.service_base import servicebase;
 
 apigestionTurnos = Blueprint('gestionTurnos', 'gestionTurnos')
-routeapi = '/gestionTurnos'
+routeapi = '/api/gestionTurnos'
 service = servicebase(GestionTurnos)
 controllerapi = controllerbase(GestionTurnos, service)
 @apigestionTurnos.route(routeapi, methods=['GET'])
