@@ -21,3 +21,30 @@
 
   
   </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h3 mat-subheader>Pagos</h3>
+<mat-list>
+  <mat-list-item *ngFor="let item of list">
+    <mat-icon mat-list-icon>folder</mat-icon>
+    <h4 mat-line>{{item.Nombre}} - {{item.Apellido}} </h4>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+</mat-list>

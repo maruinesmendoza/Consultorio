@@ -6,7 +6,7 @@ from services.service_base import servicebase;
 from flask_cors import CORS
 
 apiamp = Blueprint('amp', 'amp')
-routeapi = '/api/consulta'
+routeapi = '/api/apm'
 service = servicebase(Apm)
 CORS(apiamp)
 controllerapi = controllerbase(Apm, service)
