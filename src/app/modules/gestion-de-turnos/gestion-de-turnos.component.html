@@ -2,7 +2,7 @@
   <mat-form-field class="example-full-width">
     <input matInput placeholder="Persona" aria-label="Persona" [matAutocomplete]="auto" [formControl]="personasCtrl">
     <mat-autocomplete #auto="matAutocomplete">
-      <mat-option *ngFor="let item of listPersonas | async" [value]="item.Apellido">
+      <mat-option *ngFor="let item of list| async" [value]="item.Apellido">
         <img class="example-option-img" aria-hidden [src]="item.IdPersona" height="25">
         <span>{{item.Apellido}}</span> |
         <small>Nombre: {{item.Apellido}}</small>
@@ -25,42 +25,9 @@
 <button mat-button>Aceptar</button>
 <button mat-button>Cancelar</button>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <h3 mat-subheader>gestion-deturmos</h3>
 <mat-list>
-  <mat-list-item *ngFor="let item of list">
+  <mat-list-item *ngFor="let item of personas">
     <mat-icon mat-list-icon>folder</mat-icon>
     <h4 mat-line>{{item.Nombre}} - {{item.Apellido}} </h4>
   </mat-list-item>

@@ -5,6 +5,7 @@ import {map, startWith} from 'rxjs/operators';
 
 import { PersonaModel } from 'src/app/models/personaModel';
 import { Service } from 'src/app/services/service';
+
 @Component({
   selector: 'app-gestion-de-turnos',
   templateUrl: './gestion-de-turnos.component.html',
@@ -14,7 +15,7 @@ export class GestionDeTurnosComponent implements OnInit {
 
   personasCtrl = new FormControl();
   apiNamePersonas : string = 'persona';
-  listPersonas : Observable<PersonaModel[]>;
+  list : Observable<PersonaModel[]>;
   personas : PersonaModel[];
   constructor(private service: Service) { }
   ngOnInit() {
@@ -22,7 +23,7 @@ export class GestionDeTurnosComponent implements OnInit {
       res => {
         console.log(res);
         this.personas = res;
-        this.listPersonas = this.personasCtrl.valueChanges
+        this.list = this.personasCtrl.valueChanges
         .pipe(
           startWith(''),
           map(item => item ? this._filterStates(item) : this.personas.slice())

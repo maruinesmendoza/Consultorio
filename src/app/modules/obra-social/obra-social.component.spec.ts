@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ObraSocialComponent } from './obra-social.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 describe('ObraSocialComponent', () => {
   let component: ObraSocialComponent;

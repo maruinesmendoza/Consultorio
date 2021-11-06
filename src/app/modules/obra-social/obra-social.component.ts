@@ -8,7 +8,7 @@ import { ObraSocialModel } from 'src/app/models/obraSocialModel';
   styleUrls: ['./obra-social.component.scss']
 })
 export class ObraSocialComponent implements OnInit {
-
+  selector: 'app-obrasocial';
   apiName : string = 'obrasocial';
   list : ObraSocialModel[];
 
