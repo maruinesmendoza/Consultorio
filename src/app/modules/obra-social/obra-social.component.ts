@@ -10,11 +10,13 @@ import { ObraSocialModel } from 'src/app/models/obraSocialModel';
 export class ObraSocialComponent implements OnInit {
   selector: 'app-obrasocial';
   apiName : string = 'obrasocial';
+
   list : ObraSocialModel[];
+
 
   constructor(private service: Service) { }
   ngOnInit() {
-     this.service.list<ObraSocialModel>(this.apiName).subscribe(
+    this.service.list<ObraSocialModel>(this.apiName).subscribe(
       res => {
         console.log(res);
         this.list = res;

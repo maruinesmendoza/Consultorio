@@ -4,6 +4,9 @@ import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 
 import { PersonaModel } from 'src/app/models/personaModel';
+import { ObraSocialModel } from 'src/app/models/obraSocialModel';
+
+
 import { Service } from 'src/app/services/service';
 
 @Component({
@@ -17,6 +20,13 @@ export class GestionDeTurnosComponent implements OnInit {
   apiNamePersonas : string = 'persona';
   list : Observable<PersonaModel[]>;
   personas : PersonaModel[];
+
+  apiobrasocial : string = 'obrasocial';
+
+  obrasocial : ObraSocialModel[];
+ 
+ 
+  
   constructor(private service: Service) { }
   ngOnInit() {
     this.service.list<PersonaModel>(this.apiNamePersonas).subscribe(
@@ -30,9 +40,17 @@ export class GestionDeTurnosComponent implements OnInit {
         );
       },
       err => console.log(err)
+
     )
+    this.service.list<ObraSocialModel>(this.apiobrasocial).subscribe(
+      res => {
+        console.log(res);
+        this.obrasocial = res;
+      },
+      err => console.log(err)
+   
 
-
+    )
   }
 
 
@@ -40,6 +58,10 @@ export class GestionDeTurnosComponent implements OnInit {
     const filterValue = value.toLowerCase();
 
     return this.personas.filter(persona => persona.Apellido.toLowerCase().indexOf(filterValue) === 0);
+  
+
+    
+
   }
 
 }

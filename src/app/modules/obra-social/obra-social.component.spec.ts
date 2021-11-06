@@ -7,6 +7,7 @@ describe('ObraSocialComponent', () => {
   let component: ObraSocialComponent;
   let fixture: ComponentFixture<ObraSocialComponent>;
 
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ObraSocialComponent ]

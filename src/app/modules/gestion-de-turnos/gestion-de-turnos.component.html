@@ -5,12 +5,20 @@
       <mat-option *ngFor="let item of list| async" [value]="item.Apellido">
         <img class="example-option-img" aria-hidden [src]="item.IdPersona" height="25">
         <span>{{item.Apellido}}</span> |
-        <small>Nombre: {{item.Apellido}}</small>
+        <small>Nombre: {{item.Apellido}}</small><br>
+        
+
       </mat-option>
     </mat-autocomplete>
+  </mat-form-field><br>
+  <mat-form-field appearance="fill">
+    <mat-label>Obras Sociales</mat-label>
+    <mat-select disableRipple>
 
+      <mat-option *ngFor="let item of obrasocial" value="item.IdObraSocial">{{item.Descripcion}}</mat-option>
+
+    </mat-select>
   </mat-form-field>
-
 </form>
 
 <label>
