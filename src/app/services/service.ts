@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class Service {
 
-  API_URI = 'http://localhost:3000/api';
+  API_URI = `${environment.apiUrl}`;
 
   constructor(private http: HttpClient) { }
 
@@ -23,12 +24,11 @@ export class Service {
     return this.http.delete(`${this.API_URI}/${apiName}/${id}`);
   }
 
-  save(game: any ,apiName: string) {
-    return this.http.post(`${this.API_URI}/${apiName}`, game);
+  save(model: any ,apiName: string) {
+    return this.http.post(`${this.API_URI}/${apiName}`, model);
   }
 
   update(id: string|number, update: any ,apiName: string): Observable<any> {
     return this.http.put(`${this.API_URI}/${apiName}/${id}`, update);
   }
-
 }

@@ -3,11 +3,14 @@ from flask import Blueprint
 from werkzeug.exceptions import HTTPException
 from domain.apm import Apm
 from services.service_base import servicebase;
+from flask_cors import CORS
 
 apiamp = Blueprint('amp', 'amp')
 routeapi = '/api/consulta'
 service = servicebase(Apm)
 controllerapi = controllerbase(Apm, service)
+CORS(apiamp)
+
 @apiamp.route(routeapi, methods=['GET'])
 def api_get():
     return controllerapi.api_get()

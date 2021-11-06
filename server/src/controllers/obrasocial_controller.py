@@ -3,11 +3,14 @@ from flask import Blueprint
 from werkzeug.exceptions import HTTPException
 from domain.obrasocial import ObraSocial
 from services.service_base import servicebase;
+from flask_cors import CORS
 
 apiobrasocial = Blueprint('obrasocial', 'obrasocial')
 routeapi = '/api/obrasocial'
 service = servicebase(ObraSocial)
 controllerapi = controllerbase(ObraSocial, service)
+CORS(apiobrasocial)
+
 @apiobrasocial.route(routeapi, methods=['GET'])
 def api_get():
     return controllerapi.api_get()

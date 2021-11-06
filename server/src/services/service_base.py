@@ -21,6 +21,7 @@ class servicebase:
         :param body: request body
         :returns: the created entity
         '''
+        print(body) 
         entity = self.entitymodel(**body)
         db.session.add(entity)
         db.session.commit()

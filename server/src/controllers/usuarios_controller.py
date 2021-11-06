@@ -11,11 +11,13 @@ from services.service_base import servicebase
 from services.usuarios_service import UsuarioService
 from http import HTTPStatus
 from flask_cors import CORS
+
 apiusuarios = Blueprint('usuarios', 'usuarios')
 routeapi = '/api/usuarios'
 service = servicebase(Usuarios)
 controllerapi = controllerbase(Usuarios, service)
 CORS(apiusuarios)
+
 @apiusuarios.route(routeapi, methods=['GET'])
 def api_get():
     return controllerapi.api_get()

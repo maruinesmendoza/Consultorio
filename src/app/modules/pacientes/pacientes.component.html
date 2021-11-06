@@ -1,39 +1,30 @@
-<form class="example-form">
+<form [formGroup]="form"  class="example-form">
   <h1 mat-subheader> Pacientes</h1>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Nombre" value="">
+    <input matInput placeholder="Nombre" value="" formControlName="Nombre">
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Apellido" value="">
+    <input matInput placeholder="Apellido" value="" formControlName="Apellido">
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <textarea matInput placeholder="DNI"></textarea>
+    <textarea matInput placeholder="DNI" formControlName="DNI"></textarea>
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <textarea matInput placeholder="Direccion"></textarea>
+    <textarea matInput placeholder="Direccion" formControlName="Direccion"></textarea>
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <textarea matInput placeholder="Fecha de Nacimiento "></textarea>
+    <textarea matInput placeholder="Fecha de Nacimiento" formControlName="FechaNacimiento"></textarea>
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <textarea matInput placeholder="Telefono"></textarea>
+    <textarea matInput placeholder="Telefono" formControlName="Tel"></textarea>
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <textarea matInput placeholder="Celular"></textarea>
+    <textarea matInput placeholder="Celular" formControlName="Celular"></textarea>
   </mat-form-field>
   
   <mat-form-field class="example-full-width">
-    <textarea matInput placeholder="Mail"></textarea>
+    <textarea matInput placeholder="Mail" formControlName="Email"></textarea>
   </mat-form-field>
-
-
-
-
-
-  
-    
-
-
 
   <mat-form-field class="example-full-width">
     <textarea matInput placeholder="Historial"></textarea>
@@ -55,23 +46,9 @@
         
         </section>pagos </a>
          </mat-form-field>
-     
-
-  
-
 </form>
-
-
-<button mat-button>Aceptar</button>
+<button mat-button (click)="Save()">Aceptar</button>
 <button mat-button>Cancelar</button>
-
-
-
-
-
-
-
-
 
 
 <h3 mat-subheader></h3>

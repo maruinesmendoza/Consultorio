@@ -3,11 +3,14 @@ from flask import Blueprint
 from werkzeug.exceptions import HTTPException
 from domain.gestionturnos import GestionTurnos
 from services.service_base import servicebase;
+from flask_cors import CORS
 
 apigestionTurnos = Blueprint('gestionTurnos', 'gestionTurnos')
 routeapi = '/api/gestionTurnos'
 service = servicebase(GestionTurnos)
 controllerapi = controllerbase(GestionTurnos, service)
+CORS(apigestionTurnos)
+
 @apigestionTurnos.route(routeapi, methods=['GET'])
 def api_get():
     return controllerapi.api_get()
