@@ -4,11 +4,13 @@ from werkzeug.exceptions import HTTPException
 from domain.pagos import Pagos
 from services.service_base import servicebase;
 from flask_cors import CORS
+
 apipagos = Blueprint('pagos', 'pagos')
 routeapi = '/api/pagos'
 service = servicebase(Pagos)
-controllerapi = controllerbase(Pagos, service)
 CORS(apipagos)
+controllerapi = controllerbase(Pagos, service)
+
 @apipagos.route(routeapi, methods=['GET'])
 def api_get():
     return controllerapi.api_get()

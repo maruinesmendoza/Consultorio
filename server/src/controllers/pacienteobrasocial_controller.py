@@ -8,6 +8,7 @@ from flask_cors import CORS
 apipacienteObraSocial = Blueprint('pacienteObraSocial', 'pacienteObraSocial')
 routeapi = '/api/pacienteObraSocial'
 service = servicebase(PacienteObraSocial)
+CORS(apipacienteObraSocial)
 controllerapi = controllerbase(PacienteObraSocial, service)
 CORS(apipacienteObraSocial)
 

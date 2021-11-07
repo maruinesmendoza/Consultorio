@@ -2,15 +2,23 @@
   <mat-form-field class="example-full-width">
     <input matInput placeholder="Persona" aria-label="Persona" [matAutocomplete]="auto" [formControl]="personasCtrl">
     <mat-autocomplete #auto="matAutocomplete">
-      <mat-option *ngFor="let item of listPersonas | async" [value]="item.Apellido">
+      <mat-option *ngFor="let item of list| async" [value]="item.Apellido">
         <img class="example-option-img" aria-hidden [src]="item.IdPersona" height="25">
         <span>{{item.Apellido}}</span> |
-        <small>Nombre: {{item.Apellido}}</small>
+        <small>Nombre: {{item.Apellido}}</small><br>
+        
+
       </mat-option>
     </mat-autocomplete>
+  </mat-form-field><br>
+  <mat-form-field appearance="fill">
+    <mat-label>Obras Sociales</mat-label>
+    <mat-select disableRipple>
 
+      <mat-option *ngFor="let item of obrasocial" value="item.IdObraSocial">{{item.Descripcion}}</mat-option>
+
+    </mat-select>
   </mat-form-field>
-
 </form>
 
 <label>
@@ -18,4 +26,18 @@
   <input [min]="min" [max]="max"
          [owlDateTimeTrigger]="dt10" [owlDateTime]="dt10">
   <owl-date-time #dt10></owl-date-time>
-</label>
+</label><br><br><br>
+
+
+
+<button mat-button>Aceptar</button>
+<button mat-button>Cancelar</button>
+
+<h3 mat-subheader>gestion-deturmos</h3>
+<mat-list>
+  <mat-list-item *ngFor="let item of personas">
+    <mat-icon mat-list-icon>folder</mat-icon>
+    <h4 mat-line>{{item.Nombre}} - {{item.Apellido}} </h4>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+</mat-list>

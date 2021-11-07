@@ -8,6 +8,7 @@ from flask_cors import CORS
 apigestionTurnos = Blueprint('gestionTurnos', 'gestionTurnos')
 routeapi = '/api/gestionTurnos'
 service = servicebase(GestionTurnos)
+CORS(apigestionTurnos)
 controllerapi = controllerbase(GestionTurnos, service)
 CORS(apigestionTurnos)
 

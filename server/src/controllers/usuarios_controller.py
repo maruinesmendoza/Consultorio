@@ -1,6 +1,5 @@
 import json
 from flask.globals import request
-from flask.json import jsonify
 from flask.wrappers import Response
 from controllers.controller_base import controllerbase
 from flask import Blueprint

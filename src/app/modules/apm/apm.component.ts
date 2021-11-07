@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Service } from '../../services/service'
+import { AmpModel } from 'src/app/models/ampModel';
 
 @Component({
   selector: 'app-apm',
@@ -6,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./apm.component.scss']
 })
 export class ApmComponent implements OnInit {
+  selector: 'app-apm';
+  apiName : string = 'apm';
+  list : AmpModel[];
 
-  constructor() { }
+  constructor(private service: Service) { }
+  
 
-  ngOnInit() {
+  ngOnInit()
+  {
+  this.service.list<AmpModel>(this.apiName).subscribe(
+    res => {
+      console.log(res);
+      this.list = res;
+    },
+    err => console.log(err)
+  )
   }
-
 }
+
+
