@@ -1,8 +1,7 @@
-#!/usr/bin/env python
-from flask import Blueprint, jsonify, request
-import services.paciente_service as paciente_service
-from domain.paciente import Paciente
+from controllers.controller_base import controllerbase
+from flask import Blueprint
 from werkzeug.exceptions import HTTPException
+
 from services.service_base import servicebase;
 from controllers.controller_base import controllerbase
 
@@ -15,7 +14,6 @@ routeapi = '/api/pacientes'
 service = servicebase(Paciente)
 controllerapi = controllerbase(Paciente, service)
 CORS(apipaciente)
-
 
 @apipaciente.route(routeapi, methods=['GET'])
 def api_get():
@@ -36,6 +34,3 @@ def api_delete(id):
 @apipaciente.errorhandler(HTTPException)
 def handle_exception(e):
     return controllerapi.handle_exception(e)
-
-
-

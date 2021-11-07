@@ -16,6 +16,7 @@ routeapi = '/api/persona'
 service = servicebase(Persona)
 CORS(apipersona)
 controllerapi = controllerbase(Persona, service)
+
 @apipersona.route(routeapi, methods=['GET'])
 def api_get():
     return controllerapi.api_get()

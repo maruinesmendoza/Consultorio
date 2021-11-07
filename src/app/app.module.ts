@@ -33,6 +33,7 @@ import {OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import {MatSelectModule} from '@angular/material/select'
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatTableModule} from '@angular/material/table';
 
 import {CommonModule } from '@angular/common';
 
@@ -75,6 +76,7 @@ import {CommonModule } from '@angular/common';
     MatSnackBarModule,  
     CommonModule,
     MatFormFieldModule,
+    MatTableModule,
   ],
   providers: [MatDatepickerModule,MatCheckboxModule,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

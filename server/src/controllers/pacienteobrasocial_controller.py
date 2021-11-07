@@ -10,6 +10,8 @@ routeapi = '/api/pacienteObraSocial'
 service = servicebase(PacienteObraSocial)
 CORS(apipacienteObraSocial)
 controllerapi = controllerbase(PacienteObraSocial, service)
+CORS(apipacienteObraSocial)
+
 @apipacienteObraSocial.route(routeapi, methods=['GET'])
 def api_get():
     return controllerapi.api_get()

@@ -10,6 +10,8 @@ routeapi = '/api/gestionTurnos'
 service = servicebase(GestionTurnos)
 CORS(apigestionTurnos)
 controllerapi = controllerbase(GestionTurnos, service)
+CORS(apigestionTurnos)
+
 @apigestionTurnos.route(routeapi, methods=['GET'])
 def api_get():
     return controllerapi.api_get()

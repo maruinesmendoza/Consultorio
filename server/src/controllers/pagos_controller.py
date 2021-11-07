@@ -10,6 +10,7 @@ routeapi = '/api/pagos'
 service = servicebase(Pagos)
 CORS(apipagos)
 controllerapi = controllerbase(Pagos, service)
+
 @apipagos.route(routeapi, methods=['GET'])
 def api_get():
     return controllerapi.api_get()

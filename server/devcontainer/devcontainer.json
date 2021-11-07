@@ -1,0 +1,5 @@
+{
+    "name":"server",
+    "dockerFile":"dockerFile",
+    "port":"3000"
+}

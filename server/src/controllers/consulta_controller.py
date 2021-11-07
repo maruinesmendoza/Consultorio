@@ -5,12 +5,12 @@ from domain.consulta import Consulta
 from services.service_base import servicebase;
 from flask_cors import CORS
 
-
 apiconsulta = Blueprint('consulta', 'consulta')
 routeapi = '/api/consulta'
 service = servicebase(Consulta)
 CORS(apiconsulta)
 controllerapi = controllerbase(Consulta, service)
+
 @apiconsulta.route(routeapi, methods=['GET'])
 def api_get():
     return controllerapi.api_get()
