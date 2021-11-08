@@ -47,7 +47,7 @@ export class ApmComponent implements OnInit {
     get Apellido() {
     return this.form.value.Apellido;
     }
-    get Direccion() {
+    get DNI() {
     return this.form.value.Direccion;
     }
     get Celular() {
@@ -70,7 +70,7 @@ Save()
   {
     Nombre: this.field.nombre.value,
     Apellido: this.field.Apellido.value,
-    Direccion: this.field.Direccion.value,
+    DNI: this.field.DNI.value,
     celular: this.field.celular.value,
     Email: this.field.Email.value,
     Medicamento: this.field.Medicamento.value,
