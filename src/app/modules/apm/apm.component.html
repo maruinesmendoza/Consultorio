@@ -1,4 +1,5 @@
 <form class="example-form">
+  <form [formGroup]="form"  class="example-form">
   <h1 mat-subheader> APM</h1>
     <mat-form-field class="example-full-width">
       <input matInput placeholder="Nombre" value="">
@@ -7,10 +8,10 @@
         <input matInput placeholder="Apellido" value="">
       </mat-form-field><br>
       <mat-form-field class="example-full-width">
-          <input matInput placeholder="DNI" value="">
+          <input matInput placeholder="Direccion" value="">
         </mat-form-field><br>
     <mat-form-field class="example-full-width">
-      <textarea matInput placeholder="Telefono"></textarea>
+      <textarea matInput placeholder="celular"></textarea>
     </mat-form-field><br>
     <mat-form-field class="example-full-width">
         <textarea matInput placeholder="E-Mail"></textarea>
@@ -22,8 +23,8 @@
             <textarea matInput placeholder="Laboratorio"></textarea>
           </mat-form-field><br>
         </form>
-        <button mat-button>Aceptar</button>
-        <button mat-button>Cancelar</button>
+        <button mat-button (click)="Save()">Aceptar</button>
+        <button mat-button (click)="Save()">Cancelar</button>
 
 
 

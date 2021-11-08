@@ -1,10 +1,9 @@
 from controllers.controller_base import controllerbase
 from flask import Blueprint
 from werkzeug.exceptions import HTTPException
-
 from services.service_base import servicebase;
 from controllers.controller_base import controllerbase
-
+from domain.paciente import Paciente
 import json
 from flask_cors import CORS
 
