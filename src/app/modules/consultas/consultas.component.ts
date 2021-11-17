@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import{FormControl} from '@angular/forms'
-import{ Observable} from 'rxjs';
+
 import {FormBuilder, FormGroup, Validators, } from '@angular/forms'
 import { ConsultasModel } from 'src/app/models/consultasModels'
 import { Service } from 'src/app/services/service';
-import {map, startWith} from 'rxjs/operators';
+
 
     @Component({
   selector: 'app-consultas',
@@ -14,11 +14,8 @@ import {map, startWith} from 'rxjs/operators';
     })
   export class ConsultasComponent implements OnInit {
     form: FormGroup;
-  ConsultasCtrl = new FormControl();
-  apiNameconsultas : string = 'Consultas';
-  listconsultas : Observable<ConsultasModel[]>;
-  consultas : ConsultasModel[];
-  consultasmodel : ConsultasModel;
+  apiName : string = 'Consultas';
+  list: ConsultasModel[];
   get field() { return this.form.controls; }
 
 
@@ -27,61 +24,55 @@ import {map, startWith} from 'rxjs/operators';
 
   ngOnInit() {
     this.form = this.formBuilder.group({
-      fecha: ['', Validators.required],
+      Fecha: ['', Validators.required],
       Diagnostico: ['', Validators.required],
-      medicamento: ['', Validators.required],
+      Medicamento: ['', Validators.required],
 
     });
      
-    this.service.list<ConsultasModel>(this.apiNameconsultas).subscribe(
-      res => {
-        this.consultas = res;
-        this.listconsultas = this.ConsultasCtrl.valueChanges
-        .pipe(
-        startWith(''),
-         map(item => item ? this._filterStates(item) : this.consultas.slice())
-);
-        },
-    err => console.log(err)
-) 
-
-}
-  get fecha() {
-  return this.form.value.fecha;
-  }
-
-    get diagnostico() {
-    return this.form.value.Diagnostico;
-}
-    get Medicamento() {
-  return this.form.value.Medicamento;
-
-}
-
-  Save()
-  {
-    const model = 
-    {
-      fecha: this.field.fecha.value,
-      Diagnostico: this.field.Diagnostico.value,
-      Medicamento: this.field.Medicamento.value,
-    }
-    
-    this.service.save(model,this.apiNameconsultas).subscribe(
+    this.service.list<ConsultasModel>(this.apiName).subscribe(
       res => {
         console.log(res);
+        this.list=res;
       },
       err => console.log(err)
     )
   }
 
 
+    get fecha() {
+    return this.form.value.Fecha;
+    }
 
-private _filterStates(value: string): ConsultasModel[] {
-  const filterValue = value.toLowerCase();
+    get diagnostico() {
+    return this.form.value.Diagnostico;
+    }
+    get Medicamento() {
+    return this.form.value.Medicamento;
+    }
 
-  
-  return this.consultas.filter(Consultas =>Consultas.nombre_de_enfermedad.toLowerCase().indexOf(filterValue) === 0);
-
-  }
-}
+    Save()
+    {
+    const model = 
+    {
+      fecha: this.field.Fecha.value,
+      Diagnostico: this.field.Diagnostico.value,
+      Medicamento: this.field.Medicamento.value,
+    }
+    
+    this.service.save(model,this.apiName).subscribe(
+      res => {
+        console.log(res);
+        this.Clear();
+      },
+      err => console.log(err)
+    )
+    }
+   Clear()
+    {
+      this.field.fecha.setValue(null);
+      this.field.Diagnostico.setValue(null);
+      this.field.Medicamento.setValue(null);
+      }  
+    }
+     

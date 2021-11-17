@@ -9,7 +9,7 @@ from controllers.pacienteobrasocial_controller import apipacienteObraSocial
 from controllers.pagos_controller import apipagos
 from controllers.persona_controller import apipersona
 from controllers.usuarios_controller import apiusuarios
-
+from controllers.laboratorio_controller import apilaboratorio
 
 # register the api
 
@@ -22,6 +22,7 @@ app.register_blueprint(apipacienteObraSocial)
 app.register_blueprint(apipagos)
 app.register_blueprint(apipersona)
 app.register_blueprint(apiusuarios)
+app.register_blueprint(apilaboratorio)
 
 if __name__ == '__main__':
     ''' run application '''

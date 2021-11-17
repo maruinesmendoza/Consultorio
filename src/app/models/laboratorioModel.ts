@@ -1,4 +1,6 @@
-export interface PacienteModel {
-    IdLaboratorio?: number,
-    Descripcion?: string
+export interface LaboratorioModel {
+    Idlaboratorio?: number,
+    Descripcion?: string,
+    Medicamento ?:string,
+    Nombre_Laboratorio?: string
 };

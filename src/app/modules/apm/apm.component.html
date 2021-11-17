@@ -19,44 +19,16 @@
       <mat-form-field class="example-full-width">
           <textarea matInput placeholder="Medicamento"></textarea>
         </mat-form-field><br>
-        <mat-form-field class="example-full-width">
-            <textarea matInput placeholder="Laboratorio"></textarea>
-          </mat-form-field><br>
-        </form>
+        <mat-form-field appearance="fill">
+          <mat-label>Laboratorios</mat-label>
+          <mat-select disableRipple>
+      <mat-option *ngFor="let item of listLaboratorio" value="item.Idlaboratorio">{{item.Descripcion}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+      
         <button mat-button (click)="Save()">Aceptar</button>
         <button mat-button (click)="Save()">Cancelar</button>
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   <h3 mat-subheader>apm</h3>
 <mat-list>

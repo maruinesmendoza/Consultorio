@@ -79,8 +79,23 @@ export class PacientesComponent implements OnInit {
     this.service.save(model,this.apiName).subscribe(
       res => {
         console.log(res);
+        this.Clear();
       },
       err => console.log(err)
     )
+
+  }
+
+  
+  Clear()
+  {
+    this.field.Nombre.setValue(null);
+    this.field.Apellido.setValue(null);
+    this.field.Tel.setValue(null);
+    this.field.FechaNacimiento.setValue(null);
+    this.field.DNI.setValue(null);
+    this.field.Direccion.setValue(null);
+    this.field.Email.setValue(null);
+    this.field.Celular.setValue(null);
   }
 }
