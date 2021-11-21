@@ -26,7 +26,7 @@ export class GestionDeTurnosComponent implements OnInit {
  
   
   constructor(private formBuilder: FormBuilder,private service: Service) { }
-  ngOnInit() {
+   ngOnInit() {
     this.service.list<PersonaModel>(this.apiNamePersonas).subscribe(
       res => {
         console.log(res);
@@ -61,18 +61,48 @@ export class GestionDeTurnosComponent implements OnInit {
     
 
     }
-    
+      
+    get GestionTurno(){
+      return this.form.value.GestionTurno;
+    }
+    get ObraSocial (){
+      return this.form.value.ObraSocial;
+    }
+    get Paciente()
+    {
+    return this.form.value.Paciente;
+    }
+    get fecha() 
+    {
+      return this.form.value.Fecha;
+      }
+   
     Save()
     {
     const model = 
     {
       IdGestionTurno: this.field.IdGestionTurno.value,
-      IdObraSocial : this.field.IdGestionTurno.value,
+      IdObraSocial : this.field.IdObraSocial.value,
       IdPaciente:  this.field.IdPaciente.value,
       Fecha: this.field.Fecha.value,
    
     }
+    this.service.save(model,this.apiNamePersonas).subscribe(
+      res => {
+        console.log(res);
+        this.Clear();
+      },
+      err => console.log(err)
+    )
+    }
+    Clear()
+    {
+      this.field.IdGestionTurno.setValue(null);
+      this.field.IdObraSocial.setValue(null);
+      this.field.IdPaciente.setValue(null);
+      this.field.Fecha.setValue(null);
+      }  
+    }
+  
 
-  }
-}
 

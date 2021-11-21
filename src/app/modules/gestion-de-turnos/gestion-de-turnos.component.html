@@ -17,21 +17,21 @@
 
       <mat-option *ngFor="let item of obrasocial" value="item.IdObraSocial">{{item.Descripcion}}</mat-option>
 
-    </mat-select>
-  </mat-form-field>
-</form>
+      </mat-select>
+     </mat-form-field>
+        </form>
 
-<label>
-  Dia y Hora:
-  <input [min]="min" [max]="max"
+    <label>
+    Dia y Hora:
+    <input [min]="min" [max]="max"
          [owlDateTimeTrigger]="dt10" [owlDateTime]="dt10">
-  <owl-date-time #dt10></owl-date-time>
-</label><br><br><br>
+    <owl-date-time #dt10></owl-date-time>
+  </label><br><br><br>
 
 
 
-<button mat-button>Aceptar</button>
-<button mat-button>Cancelar</button>
+<button mat-button (click)="Save()">Aceptar</button>
+<button mat-button (click)="Clear()">Cancelar</button>
 
 <h3 mat-subheader>gestion-deturmos</h3>
 <mat-list>
