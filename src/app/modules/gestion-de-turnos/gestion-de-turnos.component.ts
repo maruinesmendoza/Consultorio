@@ -87,7 +87,7 @@ export class GestionDeTurnosComponent implements OnInit {
       Fecha: this.field.Fecha.value,
    
     }
-    this.service.save(model,this.apiNamePersonas).subscribe(
+    this.service.save(model,this.apiobrasocial).subscribe(
       res => {
         console.log(res);
         this.Clear();
